@@ -2,6 +2,6 @@ FROM nginx:latest
 
 WORKDIR /app
 
-COPY index.html .
+COPY ppp.html .
 
 CMD ["nginx", "-g", "daemon off;"]touch 

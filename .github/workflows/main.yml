@@ -1,0 +1,19 @@
+name: CI/CD для статичного HTML-файлу
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t ci-cd-html .
+
+      - name: Run Docker container
+        run: docker run -d -p 80:80 ci-cd-html
