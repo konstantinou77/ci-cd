@@ -16,4 +16,4 @@ jobs:
         run: docker build -t ci-cd-html .
 
       - name: Run Docker container
-        run: docker run -d -p 80:80 ci-cd-html
+        run: docker run -d -p 8000:80 ci-cd-html
